@@ -3,7 +3,7 @@ using namespace std;
 
 int main(){
 	//buscar una cadena de texto dentro de otra
-	string str = "Los dias transcurren inexorables ante atardeceres ";
+	string str = "El tiempo transcurre inexorable ante atardeceres ";
 	str += "que no nos es menester observar.";
 	
 	string buscar;
