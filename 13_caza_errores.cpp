@@ -20,8 +20,7 @@ int main(){
 		//aqui va el codigo a ejecutar en caso de falla
 		cout << "El numero digitado no es permitido." << endl;
 	}
-	
-	
+		
 	
 	return 145;
 }
