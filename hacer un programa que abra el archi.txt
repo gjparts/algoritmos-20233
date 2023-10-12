@@ -1,0 +1,5 @@
+hacer un programa que abra el archivo ejemplo_24mil.txt, lo recorra
+y muestre cuantas lineas tiene, cual es la suma de todos sus numeros,
+cuantos numeros son pares, cuantos numeros son impares, y
+el promedio de todos sus numeros.
+Importante: No imprimir cada linea.
