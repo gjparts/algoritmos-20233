@@ -20,11 +20,10 @@ int main(){
 		archivo << "Hola UNAH" << endl;
 		archivo << 2+2 << endl;
 		archivo << "\tHola" << "\nAdios" << endl;
+		archivo.close(); //cerrar el archivo
 	}
 	else
 		cout << "Archivo no puede ser escrito" << endl;
-	
-	archivo.close(); //cerrar el archivo
 	
 	return 765;
 }
