@@ -26,6 +26,7 @@ int main(){
 			n++; //sumar 1 al contador de lineas
 		}
 		cout << "El archivo tiene " << n << " lineas." << endl;
+		archivo.close(); //cerrar el archivo
 	}
 	else
 		cout << "Archivo no existe o no tiene permiso." << endl;

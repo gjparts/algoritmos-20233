@@ -24,6 +24,7 @@ int main(){
 	else
 		cout << "Archivo no puede ser escrito" << endl;
 	
+	archivo.close(); //cerrar el archivo
 	
 	return 765;
 }

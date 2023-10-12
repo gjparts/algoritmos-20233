@@ -42,6 +42,7 @@ int main(){
 		cout << "Cantidad de numeros pares: " << pares << endl;
 		cout << "Cantidad de numeros impares: " << impares << endl;
 		cout << "Promedio de los numeros: " << suma/(pares+impares) << endl;
+		archivo.close(); //cerrar el archivo
 	}
 	else
 		cout << "No fue posible abrir el archivo, no existe o no tiene permiso." << endl;
