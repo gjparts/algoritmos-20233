@@ -19,6 +19,7 @@ int 	minimo(int a, int b, int c);
 int azar(int minimo, int maximo);
 bool estaEnMayusculas(string cadena);
 int buscarChar(char buscado, string donde);
+int buscarEnArreglo(string buscado, string donde[], int tamanoArreglo);
 
 int main(){
 	cout << elevar(2,0) << endl;
@@ -49,6 +50,11 @@ int main(){
 	cout << buscarChar('L',"muercielago") << endl;
 	cout << buscarChar('a',"muercielago") << endl;
 	cout << buscarChar('x',"muercielago") << endl;
+	string colores[] = {"rojo","amarillo","azul","verde","blanco","negro"};
+	cout << buscarEnArreglo("azul",colores,end(colores)-begin(colores)) << endl;
+	cout << buscarEnArreglo("naranja",colores,end(colores)-begin(colores)) << endl;
+	cout << buscarEnArreglo("negro",colores,end(colores)-begin(colores)) << endl;
+	cout << buscarEnArreglo("NEGRO",colores,end(colores)-begin(colores)) << endl;
 	
 	//cout << "4 es multiplo de 2? " << ( multiplo(4,2) == true ? "Si" : "No" );
 	return 678;
@@ -61,7 +67,15 @@ dentro arreglo, si la cadena es encontrada entonces la funcion
 retornara un numero entero con la posicion de la primer
 coincidencia en la que se encontró, si no se encuentra
 nada entonces retornar -1.*/
-
+int buscarEnArreglo(string buscado, string donde[], int tamanoArreglo){
+	for( int i = 0; i < tamanoArreglo; i++ ){
+		if( donde[i] == buscado )
+			return i;
+	}
+	//si llego hasta aqui es porque termino de recorrer
+	//y no encontro nada
+	return -1;
+}
 /*9. Escriba una funcion a la cual se le proporcione como
 parametros un caracter y una cadena de texto, dicha funcion
 debera devolver un entero con la posicion de la primer coincidencia
