@@ -3,6 +3,7 @@
 #include<cmath>
 #include<iomanip> //para poder usar setprecision
 #include<time.h>
+#include<algorithm>
 using namespace std;
 
 //prototipos de funcion
@@ -16,6 +17,8 @@ double 	minimo(double a, double b, double c);
 float 	minimo(float a, float b, float c);
 int 	minimo(int a, int b, int c);
 int azar(int minimo, int maximo);
+bool estaEnMayusculas(string cadena);
+int buscarChar(char buscado, string donde);
 
 int main(){
 	cout << elevar(2,0) << endl;
@@ -41,12 +44,53 @@ int main(){
 	cout << azar(1,6) << endl;
 	cout << azar(14,20) << endl;
 	cout << azar(-7,-1) << endl;
+	cout << estaEnMayusculas("NARANJA") << endl;
+	cout << estaEnMayusculas("NARaNJA") << endl;
+	cout << buscarChar('L',"muercielago") << endl;
+	cout << buscarChar('a',"muercielago") << endl;
+	cout << buscarChar('x',"muercielago") << endl;
 	
 	//cout << "4 es multiplo de 2? " << ( multiplo(4,2) == true ? "Si" : "No" );
 	return 678;
 }
 
 //implementacion
+/*10. Escriba una funcion que reciba como parametros un string y un
+arreglo de string, dicha funcion debera buscar el string proporcionado
+dentro arreglo, si la cadena es encontrada entonces la funcion
+retornara un numero entero con la posicion de la primer
+coincidencia en la que se encontró, si no se encuentra
+nada entonces retornar -1.*/
+
+/*9. Escriba una funcion a la cual se le proporcione como
+parametros un caracter y una cadena de texto, dicha funcion
+debera devolver un entero con la posicion de la primer coincidencia
+en la que fue encontrado el caracter proporcionado dentro de
+la cadena de texto proporcionada, si el caracter no es
+encontrado entonces devolver -1.
+No tiene permitido utilizar la funcion find del string.*/
+int buscarChar(char buscado, string donde){
+	for( int i = 0; i < donde.length(); i++ ){
+		//cout << donde[i] << endl;
+		if( donde[i] == buscado )
+			return i; //retornar la posicion del char encontrado
+	}
+	//si llego hasta aqui es porque termino de recorrer
+	//la cadena y no hallo nada.
+	return -1;
+}
+
+/*8. Escriba una funcion que devuelva true si una cadena
+de texto esta escrita toda en mayusculas y false si no es así.*/
+bool estaEnMayusculas(string cadena){
+	string mayusculas = cadena;
+	transform(mayusculas.begin(),mayusculas.end(), mayusculas.begin(),::toupper);
+	if( cadena == mayusculas )
+		return true;
+	else
+		return false;
+}
+
 /*7. Escriba una funcion que reciba dos numeros enteros
 como parametros, uno sera el minimo y el otro el maximo,
 la funcion debera retornar un numero aleatorio entero que
