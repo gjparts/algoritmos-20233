@@ -36,6 +36,9 @@ void mayusculas(string *str){
 	*str = copia;
 }
 
+/*hacer una funcion void que reciba un string apuntado
+y que le reemplace sus espacios en blanco por guiones bajos.*/
+
 
 
 
