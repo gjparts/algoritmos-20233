@@ -4,6 +4,7 @@ using namespace std;
 
 //prototipo de funcion
 void mayusculas(string *str);
+void cambiarEspacios(string *str);
 
 int main(){
 	/*apuntadores cuando se usa objetos o estructuras de datos.
@@ -21,8 +22,27 @@ int main(){
 	cout << "direccion de memoria de str1: " << &str1 << endl;
 	mayusculas(&str1);
 	cout << "str1 luego de mayusculas: " << str1 << endl;
+	string str2 = "Ingenieria en Sistemas UNAH-VS";
+	cout << "str2 antes de reemplazar espacios: " << str2 << endl;
+	cambiarEspacios(&str2);
+	cout << "str2 despues de reemplazar espacios: " << str2 << endl;
 	
 	return 123;
+}
+
+/*hacer una funcion void que reciba un string apuntado
+y que le reemplace sus espacios en blanco por guiones bajos.*/
+void cambiarEspacios(string *str){
+	//sacar una copia local del valor del apuntador
+	string copia = *str;
+	
+	for( int i = 0; i < copia.length(); i++ ){
+		if( copia[i] == ' ' )
+			copia[i] = '_';
+	}
+	//una vez alterada la copia, sobreescribir el valor de la variable apuntada
+	//por el valor de la copia.
+	*str = copia;
 }
 
 /*hacer una funcion void que reciba un string apuntado y lo cambie a mayusculas*/
@@ -35,10 +55,6 @@ void mayusculas(string *str){
 	//por el valor de la copia.
 	*str = copia;
 }
-
-/*hacer una funcion void que reciba un string apuntado
-y que le reemplace sus espacios en blanco por guiones bajos.*/
-
 
 
 
