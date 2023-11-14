@@ -20,7 +20,14 @@ class Persona{
 			this->edad = 0;
 			this->genero = 'X';
 			this->estadoCivil = 'S';
-		}		
+		}
+		//constructor con 4 parametros
+		Persona(string nombre, int edad, char genero, char estadoCivil){
+			this->nombre = nombre;			
+			this->edad = edad;
+			this->genero = genero;
+			this->estadoCivil = estadoCivil;
+		}	
 };
 
 #endif
