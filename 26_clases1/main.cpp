@@ -26,5 +26,33 @@ int main(){
 	cout << "El genero de p2 es " << p2->genero << endl;
 	cout << "El estado civil de p2 es " << p2->estadoCivil << endl;
 	
+	//objeto no inicializado
+	//Persona *p3;
+	//cout << p3->nombre << endl;
+	/*Initialization takes time, and C++ (like C) has a
+	philosophy of not paying for unused features, so initialization
+	is up to the developer.
+	Static variables are an exception, and static pointers
+	are initialized to nullptr by default. Compile-time
+	initialization doesn't cost anything as
+	the executable loader is reading in a predefined data
+	segment anyway.
+	In debug builds, the compiler may initialize
+	non-static pointer variables and even memory
+	blocks to a known garbage pattern.*/
+	
+	Persona *p4 = new Persona();
+	cout << "El nombre de p4 es " << p4->nombre << endl;
+	
+	Persona *p5 = new Persona("Viena",15);
+	cout << "*****************************************" << endl;
+	cout << "El nombre de p5 es " << p5->nombre << endl;
+	cout << "La edad de p5 es " << p5->edad << endl;
+	cout << "El genero de p5 es " << p5->genero << endl;
+	cout << "El estado civil de p5 es " << p5->estadoCivil << endl;
+	
+	p5->genero = 'F';
+	cout << "El genero de p5 es " << p5->genero << endl;
+	
 	return 123;
 }
