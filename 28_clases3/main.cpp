@@ -19,5 +19,17 @@ int main(){
 	p1->setGenero('M');
 	cout << p1->getGenero() << endl;
 	
+	cout << p1->getSalario() << endl;
+	p1->setSalario(15000);
+	cout << p1->getSalario() << endl;
+	
+	cout << p1->getContrato() << endl;
+	p1->setContrato('P');
+	cout << p1->getContrato() << endl;
+	
+	Empleado *p2 = new Empleado("Filomeno Colinas",78,'M',9000,'P');
+	p2->imprimir();
+	
+	
 	return 345;
 }
