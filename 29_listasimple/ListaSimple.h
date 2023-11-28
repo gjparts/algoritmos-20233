@@ -29,6 +29,54 @@ class ListaSimple{
 		Nodo *getLast(){
 			return this->last;
 		}
+		//push (create, agregar Nodo a la lista)
+		/*Algoritmo:
+		Si length = 0:
+			primero y ultimo apuntan al nuevo Nodo
+		si length > 0:
+			el siguiente Nodo de ultimo es el nuevo Nodo
+			ultimo Nodo pasa a ser el nuevo Nodo
+		en ambos casos length suma 1
+		*/
+		push(int valor){
+			//crear nuevo Nodo
+			Nodo *nuevo = new Nodo(valor);
+			
+			//evaluar que sucede en cada escenario
+			if( this->length == 0 ){
+				this->first = nuevo;
+			}
+			else{
+				this->last->next = nuevo;
+			}
+			
+			this->last = nuevo; //ultimo Nodo pasa a ser el nuevo Nodo
+			this->length++;	//sumar 1 al tamaño
+		}
+		//print (read) imprime una representacion grafica de la lista
+		/*Algoritmo de recorrido de una Lista Simple:
+		1) crear un Nodo temporal que apunte a first
+		2) Si el Nodo temporal es diferente de NULL imprimimos su valor
+		   y temporal ahora apunta al nodo siguiente de temporal
+		3) Si el Nodo temporal es NULL entonces terminamos*/
+		void print(){
+			//crear Nodo temporal apuntado a first
+			Nodo *tmp = this->first;
+			while( tmp != NULL ){
+				//tmp es diferente de NULL, imprimimos su value
+				cout << tmp->value << "->";
+				//avanzar al siguiente Nodo
+				tmp = tmp->next;
+			}
+			//llegamos al final
+			cout << "NULL" << endl;
+		}
+		//get (read) recupera un Nodo en determinada posicion
+		//devuelve un objeto de clase Nodo
+		Nodo *get(int posicion){
+			//recorrer todos los Nodos hasta llegar a la posicion solicitada
+			
+		}
 };
 
 #endif
