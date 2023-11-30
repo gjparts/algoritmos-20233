@@ -2,6 +2,7 @@
 #define LISTASIMPLE_H
 
 #include<iostream>
+#include<stdexcept>
 #include "Nodo.h"
 using namespace std;
 
@@ -75,7 +76,27 @@ class ListaSimple{
 		//devuelve un objeto de clase Nodo
 		Nodo *get(int posicion){
 			//recorrer todos los Nodos hasta llegar a la posicion solicitada
-			
+			//validar que la posicion solicitada exista
+			if( posicion < 0 || posicion >= this->length )
+				throw invalid_argument("posicion no valida");
+			else{
+				//recorrer la lista hasta llegar a la posicion deseada
+				Nodo *tmp = this->first;
+				
+				int actual = 0; //posicion donde nos encontramos
+				while( tmp != NULL ){
+					//si actual es la posicion deseada
+					//retornamos ese Nodo y terminamos
+					if( posicion == actual ){
+						return tmp;
+					}
+					
+					//pasar al siguiente Nodo
+					tmp = tmp->next;
+					//sumar 1 a la posicion actual
+					actual++;
+				}
+			}
 		}
 };
 
