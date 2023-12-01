@@ -98,6 +98,40 @@ class ListaSimple{
 				}
 			}
 		}
+		//set (update): altera o modifica el valor de un Nodo
+		void set(int posicion, int nuevoValor){
+			//recuperar el Nodo en la posicion enviada y cambiarle su valor
+			this->get(posicion)->value = nuevoValor;
+		}
+		//pop (delete): eliminar un Nodo de la lista y lo retorna al usuario
+		Nodo *pop(int posicion){
+			//recuperar el Nodo a eliminar
+			Nodo *eliminar = this->get(posicion);
+			//pueden ocurrir dos escenarios:
+			//1) esta eliminando el primer elemento (posicion 0)
+			if( posicion == 0 ){
+				//eliminar estaria apuntando a first
+				//first pasa a ser el next de first
+				this->first = this->first->next;
+			}
+			else{
+				//2) esta eliminando un Nodo que no es el primero (posicion > 0)
+				//apuntar al Nodo anterior al Nodo a eliminar
+				Nodo *anterior = this->get(posicion-1);
+				//el next de anterior pasa a ser el next de eliminar
+				anterior->next = eliminar->next;
+				//si el Nodo a eliminar es el ultimo (last) ahora
+				//el last pasa a ser el Nodo anterior
+				if( eliminar == this->last )
+					this->last = anterior;
+			}
+			//apuntar el next de eliminar a NULL
+			eliminar->next = NULL;
+			//restar 1 a la longitud
+			this->length--;
+			//retornar el Nodo a eliminar al usuario
+			return eliminar;
+		}
 };
 
 #endif
