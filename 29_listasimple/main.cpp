@@ -47,7 +47,10 @@ int main(){
 	//imprimir el valor del ultimo
 	cout << "Valor del ultimo Nodo: " << l1->getLast()->value << endl;
 	
-	
+	//probar find
+	cout << "El valor 100 esta en la posicion: " << l1->find(100) << endl;
+	cout << "El valor 80 esta en la posicion: " << l1->find(80) << endl;
+	cout << "El valor 3 esta en la posicion: " << l1->find(3) << endl;
 	
 	return 876;
 }

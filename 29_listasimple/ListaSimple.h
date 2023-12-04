@@ -132,6 +132,32 @@ class ListaSimple{
 			//retornar el Nodo a eliminar al usuario
 			return eliminar;
 		}
+		//find (buscar), permite obtener la posicion de un Nodo en base
+		//a la primer coincidencia encontrada del valor proporcionado
+		//retornamos -1 si no se encontró el elemento
+		int find(int valorBuscado){
+			//comenzamos en el primer Nodo
+			Nodo *tmp = this->first;
+			
+			//variable para saber en que posicion se encontro el valor
+			int posicion = 0;
+			
+			//recorrer cada Nodo
+			while(tmp != NULL){
+				//se ha encontrado el valor buscado, retornamos la posicion
+				//en la que nos encontramos y terminamos con el metodo
+				if( tmp->value == valorBuscado ){
+					return posicion;	//termina el metodo, ya no sigue
+				}
+								
+				//pasar al siguiente Nodo
+				tmp = tmp->next;
+				posicion++; //sumar 1 a la posicion actual
+			}
+			//si llego hasta aqui es porque no se encontro el elemento
+			//por lo tanto retornamos -1
+			return -1;
+		}
 };
 
 #endif
